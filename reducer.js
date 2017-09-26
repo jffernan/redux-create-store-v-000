@@ -9,9 +9,7 @@ function createStore(reducer) {
   function getState() {
     return state;
   };
-
-  dispatch({ type: '@@INIT' });
-
+  
   return {
     dispatch,
     getState
@@ -25,16 +23,15 @@ function changeCount(state = { count: 0 }, action) {
 
     default:
       return state;
-  }
-}
-
+  };
+};
 
 function render() {
   let container = document.getElementById('container');
-  container.textContent = store.getState.count;
+  container.innerHTML = store.getState.count;
 };
 
-let store = createStore(changeCount) // createStore takes the changeCount reducer as an argument
+const store = createStore(changeCount) // createStore takes the changeCount reducer as an argument
 let button = document.getElementById('button');
 
 button.addEventListener('click', function() {
