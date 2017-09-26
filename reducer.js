@@ -23,7 +23,7 @@ function changeCount(state = { count: 0 }, action) {
 
     default:
       return state;
-  };
+  }
 };
 
 function render() {
